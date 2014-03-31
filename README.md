@@ -6,9 +6,9 @@ A Finnish sign language dictionary for Sailfish OS written in QML
 Attribution
 -----------
 
-This program is heavily inspired and somewhat based on by Aki Niemi's Viito for Maemo 5.
+This program is heavily inspired by and more or less based on Aki Niemi's Viito for Maemo 5. Thanks for the great app!
 
-The application icon is a remix of a work by Maty Carlota licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license.
+The application icon is a remix of a work by Maty Carlota licensed under the [Creative Commons Attribution-Share Alike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/deed.en) license. The remix by Jussi Tiira is available under the same license.
 
 Licensed under GPL v3
 ---------------------
