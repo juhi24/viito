@@ -12,22 +12,54 @@ Page {
     property string file
     allowedOrientations: Orientation.All
 
-    SlideshowView {
-        id: view
+    Drawer {
+        id: drawer
         anchors.fill: parent
-        //interactive: count > 1
+        dock: page.isPortrait ? Dock.Top : Dock.Left
 
-        delegate: Image {
-            id: image
-            source: "../../data/" + file
-            width: view.width
-            height: view.height
-            fillMode: Image.PreserveAspectFit
-            onStatusChanged: {
-                if (image.status == Image.Ready) {
-                    console.log(image.source + " loaded")
-                } else if (image.status == Image.Error) {
-                    console.log(image.source + ": error loading image")
+        background: SilicaFlickable {
+            anchors.fill: parent
+
+            Column {
+                id: column
+
+                width: page.width
+                spacing: Theme.paddingLarge
+
+                PageHeader {
+                    title: model.get(currentIndex).name
+                }
+                Label {
+                    x: Theme.paddingLarge
+                    text: "Category: " + model.category
+                }
+                Label {
+                    x: Theme.paddingLarge
+                    text: "© " + model.get(currentIndex).author
+                }
+            }
+        }
+
+        SlideshowView {
+            id: view
+            anchors.fill: parent
+
+            delegate: Image {
+                id: image
+                source: "../../data/" + file
+                width: view.width
+                height: view.height
+                fillMode: Image.PreserveAspectFit
+                onStatusChanged: {
+                    if (image.status == Image.Ready) {
+                        console.log(image.source + " loaded")
+                    } else if (image.status == Image.Error) {
+                        console.log(image.source + ": error loading image")
+                    }
+                }
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: drawer.open = !drawer.open
                 }
             }
         }
