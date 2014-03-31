@@ -3,6 +3,13 @@ Viito
 
 A Finnish sign language dictionary for Sailfish OS written in QML
 
+Attribution
+-----------
+
+This program is heavily inspired and somewhat based on by Aki Niemi's Viito for Maemo 5.
+
+The application icon is a remix of a work by Maty Carlota licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license.
+
 Licensed under GPL v3
 ---------------------
 
