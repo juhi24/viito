@@ -1,31 +1,14 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import QtQuick.XmlListModel 2.0
 import "../components"
 
 Page {
     id: page
-    property string selectedItem
+    property string selectedItem: "Categories"
     SilicaListView {
         id: listView
-        model: XmlListModel {
-            id: xmlModel
-            source: "../../data/images.xml"
-            property var subpath: ["","[@name='" + page.selectedItem + "']/image"]
-            query: "/root/topic" + subpath[pageStack.depth-1]
-
-            XmlRole {
-                name: "name"
-                query: "@name/string()"
-            }
-            XmlRole {
-                name: "author"
-                query: "@author/string()"
-            }
-            XmlRole {
-                name: "file"
-                query: "@file/string()"
-            }
+        model: XmlModel {
+            itemName: selectedItem
         }
 
         anchors.fill: parent
@@ -46,17 +29,21 @@ Page {
         }
 
         header: PageHeader {
-            title: "Categories"
+            title: selectedItem
         }
 
         delegate: ListItem {
             id: delegate
             onClicked: {
                 var props = {
-                    "selectedItem": name
+                    "selectedItem": name,
+                    "author": author,
+                    "file": file
                 }
                 if (pageStack.depth == 1) {
                     pageStack.push(Qt.resolvedUrl("Categories.qml"),props)
+                } else if (pageStack.depth == 2) {
+                    pageStack.push(Qt.resolvedUrl("ImagePage.qml"),props)
                 }
             }
 

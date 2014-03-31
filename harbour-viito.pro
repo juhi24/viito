@@ -26,6 +26,7 @@ OTHER_FILES += qml/harbour-viito.qml \
     harbour-viito.desktop \
     qml/pages/Categories.qml \
     qml/pages/About.qml \
-    qml/pages/Category.qml \
-    components/TopModel.qml
+    components/TopModel.qml \
+    qml/pages/ImagePage.qml \
+    qml/components/XmlModel.qml
 
