@@ -4,8 +4,8 @@ import QtQuick.XmlListModel 2.0
 XmlListModel {
     id: xmlModel
     source: "../../data/images.xml"
-    property string itemName
-    property string imageSubPath: "[@name='" + itemName + "']/image"
+    property string category
+    property string imageSubPath: "[@name='" + category + "']/image"
     property var subpath: ["",imageSubPath,imageSubPath]
     query: "/root/topic" + subpath[pageStack.depth-1]
 

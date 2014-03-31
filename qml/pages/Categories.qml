@@ -8,7 +8,8 @@ Page {
     SilicaListView {
         id: listView
         model: XmlModel {
-            itemName: selectedItem
+            id: xmlModel
+            category: selectedItem
         }
 
         anchors.fill: parent
@@ -35,14 +36,16 @@ Page {
         delegate: ListItem {
             id: delegate
             onClicked: {
-                var props = {
-                    "selectedItem": name,
-                    "author": author,
-                    "file": file
-                }
                 if (pageStack.depth == 1) {
-                    pageStack.push(Qt.resolvedUrl("Categories.qml"),props)
+                    pageStack.push(Qt.resolvedUrl("Categories.qml"),{"selectedItem": name})
                 } else if (pageStack.depth == 2) {
+                    var props = {
+                        "selectedItem": name,
+                        "author": author,
+                        "file": file,
+                        "model": listView.model,
+                        "currentIndex": index
+                    }
                     pageStack.push(Qt.resolvedUrl("ImagePage.qml"),props)
                 }
             }
