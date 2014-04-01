@@ -9,7 +9,8 @@ XmlListModel {
     property string imageSubPath: "[@name='" + category + "']/image"
     property var subpath: ["",imageSubPath,imageSubPath]
     property string filterContains: ""
-    query: "/root/topic" + subpath[pageStack.depth-1] + filterContains
+    property string basequery: "/root/topic" + subpath[pageStack.depth-1]
+    query: basequery + filterContains
 
     XmlRole {
         name: "name"
@@ -27,5 +28,6 @@ XmlListModel {
     function update() {
         filterContains = "[contains(@name,'" + searchString + "')]"
         reload()
+        console.log("query: " + query)
     }
 }
