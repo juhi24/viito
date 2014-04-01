@@ -28,5 +28,7 @@ OTHER_FILES += qml/harbour-viito.qml \
     qml/pages/About.qml \
     components/TopModel.qml \
     qml/pages/ImagePage.qml \
-    qml/components/XmlModel.qml
+    qml/components/XmlModel.qml \
+    qml/pages/SearchPage.qml \
+    qml/pages/SearchPage2.qml
 

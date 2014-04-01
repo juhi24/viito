@@ -21,11 +21,8 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
             }
             MenuItem {
-                text: "Debug"
-                onClicked: {
-                    console.log(xmlModel.errorString())
-                    console.log(xmlModel.query)
-                }
+                text: "Search"
+                onClicked: pageStack.push(Qt.resolvedUrl("SearchPage2.qml"))
             }
         }
 
