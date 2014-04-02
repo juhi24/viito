@@ -16,19 +16,20 @@ Summary:    Open source Finnish sign language dictionary
 Version:    0.1.1
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
+License:    GPL v3
 URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-viito.yaml
+Requires:   qt5-qtdeclarative-import-xmllistmodel
 Requires:   sailfishsilica-qt5 >= 0.10.9
-BuildRequires:  pkgconfig(sailfishapp) >= 0.0.10
-BuildRequires:  pkgconfig(Qt5Core)
-BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  pkgconfig(Qt5Qml)
+BuildRequires:  pkgconfig(Qt5Core)
+BuildRequires:  pkgconfig(sailfishapp) >= 0.0.10
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my SailfishOS Application
+Viito is an open source illustrated Finnish to Finnish sign language dictionary written in QML. The app is heavily inspired by and a tribute to Viito for Maemo 5 by Aki Niemi.
 
 
 %prep
@@ -63,14 +64,14 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-/usr/share/icons/hicolor/86x86/apps
-/usr/share/applications
-/usr/share/harbour-viito
-/usr/bin
-%{_datadir}/icons/hicolor/86x86/apps/%{name}.png
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/%{name}/qml
-%{_bindir}
 %{_datadir}/%{name}/data
+%{_bindir}
+%{_datadir}/%{name}/qml
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/hicolor/86x86/apps/%{name}.png
+/usr/bin
+/usr/share/harbour-viito
+/usr/share/applications
+/usr/share/icons/hicolor/86x86/apps
 # >> files
 # << files

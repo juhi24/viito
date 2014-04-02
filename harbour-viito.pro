@@ -24,10 +24,10 @@ OTHER_FILES += qml/harbour-viito.qml \
     rpm/harbour-viito.spec \
     rpm/harbour-viito.yaml \
     harbour-viito.desktop \
-    qml/pages/Categories.qml \
-    qml/pages/About.qml \
     components/TopModel.qml \
     qml/pages/ImagePage.qml \
     qml/components/XmlModel.qml \
-    qml/pages/SearchPage.qml
+    qml/pages/SearchPage.qml \
+    qml/pages/AboutPage.qml \
+    qml/pages/BrowsePage.qml
 
