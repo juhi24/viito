@@ -8,7 +8,9 @@ Attribution
 
 This program is heavily inspired by and more or less based on Aki Niemi's Viito for Maemo 5. Thanks for the great app!
 
-The application icon is a remix of a work by Maty Carlota licensed under the [Creative Commons Attribution-Share Alike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/deed.en) license. The remix by Jussi Tiira is available under the same license.
+The illustrations used in this application are drawn by Elina Vanninen and Kalevi Puistolinna. They are available under [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-nc-sa/3.0/) license and can be found on [Papunet image collection](http://papunet.net/materiaalia/kuvapankki).
+
+The application icon is a remix of [a work by Maty Carlota](http://commons.wikimedia.org/wiki/File:Sign_Language.svg) licensed under the [Creative Commons Attribution-Share Alike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/deed.en) license. The remix by Jussi Tiira is available under the same license.
 
 Licensed under GPL v3
 ---------------------
