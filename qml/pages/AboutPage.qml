@@ -48,9 +48,15 @@ Page {
                     font.pixelSize: Theme.fontSizeHuge
                     text: "Viito"
                 }
-                //Short description goes here (maybe later)
+                //TODO: Version info here
             }
 
+            Label {
+                wrapMode: Text.WordWrap
+                anchors.left: parent.left; anchors.right: parent.right
+                font.pixelSize: Theme.fontSizeSmall
+                text: qsTr("To Ki-Ri who inspired me to learn Finnish sign language.")
+            }
             Label {
                 wrapMode: Text.WordWrap
                 anchors.left: parent.left; anchors.right: parent.right
@@ -71,17 +77,17 @@ Page {
             anchors.top: mainColumn.bottom; anchors.topMargin: Theme.paddingLarge
             anchors.left: parent.left; anchors.right: parent.right
 
-//            BackgroundItem {
-//                anchors.left: parent.left; anchors.right: parent.right
-//                onClicked: pageStack.push(Qt.resolvedUrl("ChangeLogPage.qml"))
-//                Label {
-//                    anchors.left: parent.left; anchors.leftMargin: Theme.paddingMedium
-//                    anchors.right: parent.right; anchors.rightMargin: Theme.paddingMedium
-//                    anchors.verticalCenter: parent.verticalCenter
-//                    //: Caption of a button that leads to the changelog
-//                    text: qsTr("Changelog")
-//                }
-//            }
+            //            BackgroundItem {
+            //                anchors.left: parent.left; anchors.right: parent.right
+            //                onClicked: pageStack.push(Qt.resolvedUrl("ChangeLogPage.qml"))
+            //                Label {
+            //                    anchors.left: parent.left; anchors.leftMargin: Theme.paddingMedium
+            //                    anchors.right: parent.right; anchors.rightMargin: Theme.paddingMedium
+            //                    anchors.verticalCenter: parent.verticalCenter
+            //                    //: Caption of a button that leads to the changelog
+            //                    text: qsTr("Changelog")
+            //                }
+            //            }
         }
 
         VerticalScrollDecorator {}
