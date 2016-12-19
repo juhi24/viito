@@ -24,6 +24,7 @@ import "../components"
 Page {
     id: page
     property string selectedItem: qsTr("Categories")
+    allowedOrientations: Orientation.All
 
     BusyIndicator {
         anchors.centerIn: parent

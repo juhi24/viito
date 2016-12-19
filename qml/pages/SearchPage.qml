@@ -22,6 +22,7 @@ import "../components"
 
 Page {
     id: page
+    allowedOrientations: Orientation.All
 
     property string searchString
     onSearchStringChanged: {
