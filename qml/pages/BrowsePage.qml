@@ -16,26 +16,27 @@
     along with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-import QtQuick 2.0
+import QtQuick 2.2
 import Sailfish.Silica 1.0
 import QtQuick.XmlListModel 2.0
 import "../components"
 
 Page {
-    id: page
-    property string selectedItem: qsTr("Categories")
+    id: menuPage
     allowedOrientations: Orientation.All
+    property string selectedItem: qsTr("Categories")
 
     BusyIndicator {
         anchors.centerIn: parent
         size: BusyIndicatorSize.Large
-        running: xmlModel.status === XmlListModel.Loading
+        running: menuIndexModel.status === XmlListModel.Loading
     }
 
     SilicaListView {
-        id: listView
+        // Handle lists of categories and words.
+        id: wordListView
         model: XmlModel {
-            id: xmlModel
+            id: menuIndexModel
             category: selectedItem
         }
 
@@ -58,31 +59,28 @@ Page {
         }
 
         delegate: ListItem {
-            id: delegate
+            id: wordListDelegate
             onClicked: {
                 if (pageStack.depth == 1) {
                     pageStack.push(Qt.resolvedUrl("BrowsePage.qml"),{"selectedItem": name})
                 } else if (pageStack.depth == 2) {
                     var props = {
-                        "selectedItem": name,
-                        "author": author,
-                        "file": file,
-                        "model": listView.model,
-                        "currentIndex": index
+                        "mod": wordListView.model,
+                        "ind": index
                     }
                     pageStack.push(Qt.resolvedUrl("ImagePage.qml"),props)
                 }
             }
 
             Label {
-                id: label
+                id: wordLabel
                 x: Theme.paddingLarge
                 text: name
                 anchors.verticalCenter: parent.verticalCenter
-                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+                color: wordListDelegate.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
         }
-        VerticalScrollDecorator { flickable: listView }
+        VerticalScrollDecorator { flickable: wordListView }
     }
 }
 

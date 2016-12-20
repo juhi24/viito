@@ -16,11 +16,11 @@
     along with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-import QtQuick 2.0
+import QtQuick 2.2
 import QtQuick.XmlListModel 2.0
 
 XmlListModel {
-    id: xmlModel
+    id: indexXmlModel
     source: "../../data/images.xml"
     property string category
     property string searchString

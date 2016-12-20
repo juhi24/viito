@@ -16,24 +16,24 @@
     along with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-import QtQuick 2.0
+import QtQuick 2.2
 import Sailfish.Silica 1.0
 import "../components"
 
 Page {
-    id: page
-
-    property alias model: view.model
-    property alias currentIndex: view.currentIndex
-    property string selectedItem
-    property string author
-    property string file
+    id: imgPage
     allowedOrientations: Orientation.All
 
+    property alias signModel: slideView.model
+    property alias currentIndex: slideView.currentIndex
+    property var mod
+    property int ind
+
     Drawer {
-        id: drawer
+        id: signDrawer
         anchors.fill: parent
-        dock: page.isPortrait ? Dock.Top : Dock.Left
+        dock: imgPage.isPortrait ? Dock.Top : Dock.Left
+        open: true
 
         background: SilicaFlickable {
             anchors.fill: parent
@@ -41,45 +41,47 @@ Page {
             Column {
                 id: column
 
-                width: page.width
+                width: imgPage.width
                 spacing: Theme.paddingLarge
 
                 PageHeader {
-                    title: model.get(currentIndex).name
+                    title: signModel.get(currentIndex).name
                 }
                 Label {
                     x: Theme.paddingLarge
-                    text: model.category ? qsTr("Category") + ": " + model.category : ""
+                    text: signModel.category ? qsTr("Category") + ": " + signModel.category : ""
                 }
                 Label {
                     x: Theme.paddingLarge
-                    text: "© " + model.get(currentIndex).author
+                    text: "© " + signModel.get(currentIndex).author
                     font.pixelSize: Theme.fontSizeSmall
                     color: Theme.secondaryHighlightColor
                 }
             }
         }
 
-        SlideshowView {
-            id: view
+        foreground: SlideshowView {
+            id: slideView
             anchors.fill: parent
+            model: mod
+            currentIndex: ind
 
             delegate: Image {
-                id: image
+                id: signImage
                 source: "../../data/" + file
-                width: view.width
-                height: view.height
+                width: parent.width
+                height: parent.height
                 fillMode: Image.PreserveAspectFit
                 onStatusChanged: {
-                    if (image.status == Image.Ready) {
-                        console.log(image.source + " loaded")
-                    } else if (image.status == Image.Error) {
-                        console.log(image.source + ": error loading image")
+                    if (signImage.status == Image.Ready) {
+                        console.log(signImage.source + " loaded")
+                    } else if (signImage.status == Image.Error) {
+                        console.log(signImage.source + ": error loading image")
                     }
                 }
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: drawer.open = !drawer.open
+                    onClicked: signDrawer.open = !signDrawer.open
                 }
             }
         }
