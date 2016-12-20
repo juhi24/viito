@@ -25,8 +25,9 @@ Page {
     allowedOrientations: Orientation.All
 
     property alias signModel: slideView.model
-    property alias currentIndex: slideView.currentIndex
-    property var mod
+    property alias slideIndex: slideView.currentIndex
+    // These we get from the BrowsePage:
+    //property var mod
     property int ind
 
     Drawer {
@@ -45,7 +46,7 @@ Page {
                 spacing: Theme.paddingLarge
 
                 PageHeader {
-                    title: signModel.get(currentIndex).name
+                    title: signModel.get(slideIndex).name
                 }
                 Label {
                     x: Theme.paddingLarge
@@ -53,7 +54,7 @@ Page {
                 }
                 Label {
                     x: Theme.paddingLarge
-                    text: "© " + signModel.get(currentIndex).author
+                    text: "© " + signModel.get(slideIndex).author
                     font.pixelSize: Theme.fontSizeSmall
                     color: Theme.secondaryHighlightColor
                 }
@@ -63,9 +64,19 @@ Page {
         foreground: SlideshowView {
             id: slideView
             anchors.fill: parent
-            model: mod
-            currentIndex: ind
-
+            //model: mod
+            Component.onCompleted: {
+                console.log("COMPLETED")
+                currentIndex = imgPage.ind
+            }
+            onModelChanged: {
+                console.log("MODEL CHANGED!")
+            }
+            onCurrentIndexChanged: {
+                console.log("old index: " + imgPage.ind)
+                console.log("new index: " + currentIndex)
+                imgPage.ind = currentIndex
+            }
             delegate: Image {
                 id: signImage
                 source: "../../data/" + file

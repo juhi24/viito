@@ -65,7 +65,7 @@ Page {
                     pageStack.push(Qt.resolvedUrl("BrowsePage.qml"),{"selectedItem": name})
                 } else if (pageStack.depth == 2) {
                     var props = {
-                        "mod": wordListView.model,
+                        "signModel": menuIndexModel,
                         "ind": index
                     }
                     pageStack.push(Qt.resolvedUrl("ImagePage.qml"),props)
