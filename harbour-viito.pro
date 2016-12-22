@@ -31,3 +31,7 @@ OTHER_FILES += qml/harbour-viito.qml \
     qml/pages/AboutPage.qml \
     qml/pages/BrowsePage.qml
 
+DISTFILES += \
+    qml/components/AboutLabel.qml \
+    qml/components/AboutLabelSmall.qml
+

@@ -40,12 +40,13 @@ Page {
             anchors.fill: parent
 
             Column {
-                id: column
+                id: detailsColumn
 
-                width: imgPage.width
+                width: parent.width
                 spacing: Theme.paddingLarge
 
                 PageHeader {
+                    width: detailsColumn.width
                     title: signModel.get(slideIndex).name
                 }
                 Label {
@@ -66,11 +67,7 @@ Page {
             anchors.fill: parent
             //model: mod
             Component.onCompleted: {
-                console.log("COMPLETED")
                 currentIndex = imgPage.ind
-            }
-            onModelChanged: {
-                console.log("MODEL CHANGED!")
             }
             onCurrentIndexChanged: {
                 console.log("old index: " + imgPage.ind)

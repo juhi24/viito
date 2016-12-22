@@ -18,6 +18,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../components"
 
 
 Page {
@@ -52,25 +53,20 @@ Page {
                 }
                 //TODO: Version info here
             }
-
-            Label {
-                wrapMode: Text.WordWrap
-                anchors.left: parent.left; anchors.right: parent.right
-                font.pixelSize: Theme.fontSizeSmall
+            AboutLabelSmall {
+                anchors.left: undefined; anchors.right: undefined
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("v0.2.0")
+            }
+            AboutLabel {
                 text: qsTr("To Ki-Ri who inspired me to learn Finnish sign language.")
             }
-            Label {
-                wrapMode: Text.WordWrap
-                anchors.left: parent.left; anchors.right: parent.right
-                font.pixelSize: Theme.fontSizeSmall
+            AboutLabel {
                 text: qsTr("Viito is an open source illustrated dictionary for Finnish sign language written by Jussi Tiira. The app is heavily inspired by and a tribute to Viito for Maemo 5 by Aki Niemi.")
             }
-            Label {
-                wrapMode: Text.WordWrap
-                anchors.left: parent.left; anchors.right: parent.right
-                font.pixelSize: Theme.fontSizeExtraSmall
-                color: Theme.secondaryHighlightColor
+            AboutLabelSmall {
                 text: qsTr("The illustrations used in this application are drawn by Elina Vanninen and Kalevi Puistolinna. They are available under Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported license and can be found on <a href=\"http://papunet.net/materiaalia/kuvapankki\">Papunet image collection</a>. ")
+                onLinkActivated: Qt.openUrlExternally("http://papunet.net/materiaalia/kuvapankki")
             }
         }
 

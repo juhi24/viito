@@ -26,12 +26,12 @@ Page {
 
     property string searchString
     onSearchStringChanged: {
-        xmlModel.searchString = searchString
-        xmlModel.update()
+        searchXmlModel.searchString = searchString
+        searchXmlModel.update()
     }
 
     SilicaListView {
-        id: listView
+        id: searchListView
 
         anchors.fill: parent
 
@@ -60,7 +60,7 @@ Page {
         currentIndex: -1
 
         model: XmlModel {
-            id: xmlModel
+            id: searchXmlModel
             basequery: "//image"
 
             Component.onCompleted: update()
@@ -79,11 +79,8 @@ Page {
             }
             onClicked: {
                 var props = {
-                    "selectedItem": name,
-                    "author": author,
-                    "file": file,
-                    "model": listView.model,
-                    "currentIndex": index
+                    "signModel": searchXmlModel,
+                    "ind": index
                 }
                 pageStack.push(Qt.resolvedUrl("ImagePage.qml"),props)
             }
