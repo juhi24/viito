@@ -23,6 +23,6 @@ import "pages"
 ApplicationWindow {
     initialPage: Component { BrowsePage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
+    allowedOrientations: defaultAllowedOrientations
 }
-
 

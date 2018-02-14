@@ -1,32 +1,48 @@
 Name: harbour-viito
 Summary: Open source Finnish sign language dictionary
-Version: 0.2.1
+Version: 1.0.0
 Release: 1
+# The contents of the Group field should be one of the groups listed here:
+# http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
 Group: Qt/Qt
-URL: http://example.org/
-License: GPL v3
+URL: https://github.com/juhi24/viito
+BuildArch: noarch
+License: LICENSE
+# This must be generated before uploading a package to a remote build service.
+# Usually this line does not need to be modified.
 Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
-  Viito is an open source illustrated Finnish to Finnish sign language dictionary written in QML. The app is heavily inspired by and a tribute to Viito for Maemo 5 by Aki Niemi.
+  Viito is an open source illustrated Finnish to Finnish sign language dictionary written in QML. The app is heavily inspired by Viito for Maemo 5 by Aki Niemi.
 Configure: none
+# The qtc5 builder inserts macros to allow QtCreator to have fine
+# control over qmake/make execution
 Builder: qtc5
+
+# This section specifies build dependencies that are resolved using pkgconfig.
+# This is the preferred way of specifying build dependencies for your package.
 PkgConfigBR:
-- Qt5Quick
-- Qt5Qml
-- Qt5Core
-- sailfishapp >= 0.0.10
+  - sailfishapp >= 1.0.3
+  - Qt5Core
+  - Qt5Qml
+  - Qt5Quick
+
+# Build dependencies without a pkgconfig setup can be listed here
+# PkgBR:
+#   - package-needed-to-build
+
+# Runtime dependencies which are not automatically detected
 Requires:
-- qt5-qtdeclarative-import-xmllistmodel
-- sailfishsilica-qt5 >= 0.10.9
+  - sailfishsilica-qt5 >= 0.10.9
+  - libsailfishapp-launcher
+  - qt5-qtdeclarative-import-xmllistmodel
+
+# All installed files
 Files:
-- '%{_datadir}/%{name}/data'
-- '%{_bindir}'
-- '%{_datadir}/%{name}/qml'
-- '%{_datadir}/applications/%{name}.desktop'
-- '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
-- /usr/bin
-- /usr/share/harbour-viito
-- /usr/share/applications
-- /usr/share/icons/hicolor/86x86/apps
-PkgBR: []
+  - '%defattr(0644,root,root,-)'
+  - '%{_datadir}/%{name}'
+  - '%{_datadir}/applications/%{name}.desktop'
+  - '%{_datadir}/icons/hicolor/*/apps/%{name}.png'
+
+# For more information about yaml and what's supported in Sailfish OS
+# build system, please see https://wiki.merproject.org/wiki/Spectacle
