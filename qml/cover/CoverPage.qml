@@ -20,10 +20,20 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
-    Label {
-        id: label
-        anchors.centerIn: parent
-        text: "Viito"
+    Image {
+        id: backgroundImage
+        source: "../../data/cover.png"
+        anchors {
+            verticalCenter: parent.verticalCenter
+            bottom: parent.bottom
+            bottomMargin: Theme.paddingMedium
+            right: parent.right
+            rightMargin: -0.5*Theme.paddingSmall
+            left: parent.left
+            leftMargin: -2*Theme.paddingLarge
+        }
+        fillMode: Image.PreserveAspectFit
+        opacity: 0.15
     }
 }
 
