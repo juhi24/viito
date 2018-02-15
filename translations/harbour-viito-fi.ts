@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="62"/>
         <source>To Ki-Ri who inspired me to learn Finnish sign language.</source>
-        <translation>Ki-Rille, joka inspiroi minua opiskelemaan viittomakieltä.</translation>
+        <translation>Ki-Rille, joka innostit minua opiskelemaan viittomakieltä.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="65"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="68"/>
         <source>The illustrations used in this application are drawn by Elina Vanninen and Kalevi Puistolinna. They are available under Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported license and can be found on &lt;a href=&quot;http://papunet.net/materiaalia/kuvapankki&quot;&gt;Papunet image collection&lt;/a&gt;. </source>
-        <translation>Tässä ohjelmassa esiintyvät piirrokset ovat Elina Vannisen ja Kalevi Puistolinnan käsialaa. Kuva-aineisto on saatavilla Creative Commons Nimeä-EiKaupallinen-JaaSamoin 3.0 lisenssillä osoitteesta &lt;a href=&quot;http://papunet.net/materiaalia/kuvapankki&quot;&gt;Papunet image collection&lt;/a&gt;. </translation>
+        <translation>Tässä ohjelmassa esiintyvät piirrokset ovat Elina Vannisen ja Kalevi Puistolinnan käsialaa. Kuva-aineisto on saatavilla Creative Commons Nimeä-EiKaupallinen-JaaSamoin 3.0 lisenssillä &lt;a href=&quot;http://papunet.net/materiaalia/kuvapankki&quot;&gt;Papunetin kuvapankista&lt;/a&gt;. </translation>
     </message>
 </context>
 <context>
@@ -30,6 +30,16 @@
         <location filename="../qml/pages/BrowsePage.qml" line="27"/>
         <source>Categories</source>
         <translation>Luokat</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/BrowsePage.qml" line="48"/>
+        <source>About</source>
+        <translation>Tietoja</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/BrowsePage.qml" line="52"/>
+        <source>Search</source>
+        <translation>Etsi</translation>
     </message>
 </context>
 <context>
