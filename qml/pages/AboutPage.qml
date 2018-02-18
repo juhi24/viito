@@ -56,7 +56,7 @@ Page {
             AboutLabelSmall {
                 anchors.left: undefined; anchors.right: undefined
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "v1.0.0"
+                text: "v1.1.0"
             }
             AboutLabel {
                 text: qsTr("To Ki-Ri who inspired me to learn Finnish sign language.")
