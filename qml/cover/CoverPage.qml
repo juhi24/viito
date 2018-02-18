@@ -20,6 +20,8 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
+    id: cover
+    signal searchActionTriggered()
     Image {
         id: backgroundImage
         source: "../../data/cover.png"
@@ -34,6 +36,14 @@ CoverBackground {
         }
         fillMode: Image.PreserveAspectFit
         opacity: 0.15
+    }
+    CoverActionList {
+        CoverAction {
+            iconSource: "image://theme/icon-cover-search"
+            onTriggered: {
+                cover.searchActionTriggered();
+            }
+        }
     }
 }
 

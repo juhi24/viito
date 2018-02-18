@@ -19,10 +19,22 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "pages"
+import "cover"
 
 ApplicationWindow {
+    id: app
     initialPage: Component { BrowsePage { } }
-    cover: Qt.resolvedUrl("cover/CoverPage.qml")
+    cover: CoverPage {
+        id: cover
+        onSearchActionTriggered: {
+            app.activate()
+            // navigate to the first page, then search page
+            while (pageStack.depth>1) {
+                pageStack.navigateBack(PageStackAction.Immediate)
+            }
+            pageStack.push(Qt.resolvedUrl("pages/SearchPage.qml"), {}, PageStackAction.Immediate)
+        }
+    }
     allowedOrientations: defaultAllowedOrientations
 }
 

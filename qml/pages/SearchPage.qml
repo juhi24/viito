@@ -54,6 +54,7 @@ Page {
                     value: field.text.toLowerCase().trim()
                 }
             }
+            Component.onCompleted: field.forceActiveFocus()
         }
 
         // prevent newly added list delegates from stealing focus away from the search field
@@ -82,7 +83,7 @@ Page {
                     "signModel": searchXmlModel,
                     "ind": index
                 }
-                pageStack.push(Qt.resolvedUrl("ImagePage.qml"),props)
+                pageStack.push(Qt.resolvedUrl("ImagePage.qml"), props)
             }
         }
         VerticalScrollDecorator {}
